@@ -18,11 +18,11 @@ namespace Task2
 
         }
 
-        public override void Draw(Point firstPoint, Point secondPoint)
+        public override void Draw<Shape>(Shape currentShape)
         {
-            Circle circle = new Circle(firstPoint, secondPoint);
+            Square square = currentShape as Square;
             Graphics mainGrapics = drawPanel.CreateGraphics();
-            mainGrapics.DrawRectangle(new Pen(Color.FromArgb(circle._Colour)), circle._CenterPoint.X - circle._MainParameter, circle._CenterPoint.Y - circle._MainParameter, circle._MainParameter * 2, circle._MainParameter * 2);
+            mainGrapics.DrawRectangle(new Pen(Color.FromArgb(square._Colour)), square._CenterPoint.X - square._MainParameter, square._CenterPoint.Y - square._MainParameter, square._MainParameter * 2, square._MainParameter * 2);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Task2
             this.drawPanel = drawPanel;
         }
 
-        public abstract void Draw(Point firstPoint, Point secondPoint);
+        public abstract void Draw<Type> (Type currentShape);
 
 
     }

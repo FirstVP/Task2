@@ -16,9 +16,10 @@ namespace Task2
 
         }
 
-        public override void Draw(Point firstPoint, Point secondPoint)
+        public override void Draw<Shape>(Shape currentShape)
         {
-            Line line = new Line(firstPoint, secondPoint);
+
+            Line line = currentShape as Line;
             Graphics mainGrapics = drawPanel.CreateGraphics();
             mainGrapics.DrawLine(new Pen(Color.FromArgb(line._Colour)), line._CenterPoint.X, line._CenterPoint.Y, line._EndPoint.X, line._EndPoint.Y);
         }

@@ -48,6 +48,7 @@
     <Compile Include="Drawman.cs" />
     <Compile Include="EllipseDrawman.cs" />
     <Compile Include="Factory.cs" />
+    <Compile Include="FactoryShape.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +78,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -18,9 +18,9 @@ namespace Task2
 
         }
 
-        public override void Draw(Point firstPoint, Point secondPoint)
+        public override void Draw<Shape>(Shape currentShape)
         {
-            EquilateralTriangle triangle = new EquilateralTriangle(firstPoint, secondPoint);
+            EquilateralTriangle triangle = currentShape as EquilateralTriangle;
 
             const int pointCount = 3;
 

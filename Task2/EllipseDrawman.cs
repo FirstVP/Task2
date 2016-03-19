@@ -18,11 +18,11 @@ namespace Task2
 
         }
 
-        public override void Draw(Point firstPoint, Point secondPoint)
+        public override void Draw<Shape>(Shape currentShape)
         {
-            Rectangle Rectangle = new Rectangle(firstPoint, secondPoint);
+            Ellipse ellipse = currentShape as Ellipse;
             Graphics mainGrapics = drawPanel.CreateGraphics();
-            mainGrapics.DrawEllipse(new Pen(Color.FromArgb(Rectangle._Colour)), Rectangle._CenterPoint.X - Rectangle._MainParameter / 2, Rectangle._CenterPoint.Y - Rectangle._SecondaryParameter / 2, Rectangle._MainParameter, Rectangle._SecondaryParameter);
+            mainGrapics.DrawEllipse(new Pen(Color.FromArgb(ellipse._Colour)), ellipse._CenterPoint.X - ellipse._MainParameter / 2, ellipse._CenterPoint.Y - ellipse._SecondaryParameter / 2, ellipse._MainParameter, ellipse._SecondaryParameter);
         }
     }
 }

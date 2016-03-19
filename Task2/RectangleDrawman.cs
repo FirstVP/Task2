@@ -17,9 +17,9 @@ namespace Task2
            
         }
 
-        public override void Draw(Point firstPoint, Point secondPoint)
+        public override void Draw<Shape>(Shape currentShape)
         {
-            Rectangle rectangle = new Rectangle (firstPoint,  secondPoint);
+            Rectangle rectangle = currentShape as Rectangle;
             Graphics mainGrapics = drawPanel.CreateGraphics();
             mainGrapics.DrawRectangle(new Pen(Color.FromArgb(rectangle._Colour)), rectangle._CenterPoint.X - rectangle._MainParameter / 2, rectangle._CenterPoint.Y - rectangle._SecondaryParameter / 2, rectangle._MainParameter, rectangle._SecondaryParameter);
         }

@@ -20,6 +20,8 @@ namespace Task2
         Point FirstPoint;
         Point SecondPoint;
         Drawman CurrentDrawman;
+        FactoryShape CurrentFactory;
+        
 
         public MainForm()
         {
@@ -35,14 +37,17 @@ namespace Task2
 
         private void pnlMain_MouseUp(object sender, MouseEventArgs e)
         {
-            
+            Shape currentShape;
+
             SecondPoint.X = e.X;
             SecondPoint.Y = e.Y;
+            
 
             if (IsActive)
                 try
                 {
-                  CurrentDrawman.Draw(FirstPoint, SecondPoint);
+                  currentShape = CurrentFactory.CreateShape(FirstPoint, SecondPoint);
+                  CurrentDrawman.Draw(currentShape);
                 }
                 catch
                 {
@@ -64,36 +69,42 @@ namespace Task2
 
         private void toolStripButtonCircle_Click(object sender, EventArgs e)
         {
+            CurrentFactory = new CircleShapeFactory();
             Factory current = new CircleFactory(pnlMain);
             CurrentDrawman = current.FactoryMethod();
         }
 
         private void toolStripButtonLine_Click(object sender, EventArgs e)
         {
+            CurrentFactory = new LineShapeFactory();
             Factory current = new LineFactory(pnlMain);
             CurrentDrawman = current.FactoryMethod();
         }
 
         private void toolStripButtonEllipse_Click(object sender, EventArgs e)
         {
+            CurrentFactory = new EllipseShapeFactory();
             Factory current = new EllipseFactory(pnlMain);
             CurrentDrawman = current.FactoryMethod();
         }
 
         private void toolStripButtonRectangle_Click(object sender, EventArgs e)
         {
+            CurrentFactory = new RectangleShapeFactory();
             Factory current = new RectangleFactory(pnlMain);
             CurrentDrawman = current.FactoryMethod();
         }
 
         private void toolStripButtonSquare_Click(object sender, EventArgs e)
         {
+            CurrentFactory = new SquareShapeFactory();
             Factory current = new SquareFactory(pnlMain);
             CurrentDrawman = current.FactoryMethod();
         }
 
         private void toolStripButtonTriangle_Click(object sender, EventArgs e)
         {
+            CurrentFactory = new TriangleShapeFactory();
             Factory current = new TriangleFactory(pnlMain);
             CurrentDrawman = current.FactoryMethod();
         }
