@@ -12,6 +12,8 @@ namespace Task2
     {
         protected int MainParameter;
 
+        public int _MainParameter { get { return MainParameter; } }
+
         protected OneParametricShape(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter, int colour)
             : base(firstCentralCoordinate, secondCentralCoordinate, colour)
         {

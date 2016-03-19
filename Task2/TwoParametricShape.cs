@@ -13,6 +13,8 @@ namespace Task2
     {
         protected int SecondaryParameter;
 
+        public int _SecondaryParameter { get { return SecondaryParameter; } }
+
         protected TwoParametricShape(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter, int secondaryParameter, int colour)
             : base(firstCentralCoordinate, secondCentralCoordinate, mainParameter, colour)
         {

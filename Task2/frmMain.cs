@@ -13,24 +13,47 @@ using System.Threading;
 
 namespace Task2
 {
+
     public partial class MainForm : Form
     {
+        bool IsActive = false;
+        Point FirstPoint;
+        Point SecondPoint;
+        Drawman CurrentDrawman;
 
         public MainForm()
         {
             InitializeComponent();
         }
 
-        private void btnDraw_Click(object sender, EventArgs e)
+        private void toolStripButtonRectangle_Click(object sender, EventArgs e)
         {
-            DrawShapes();
+            CurrentDrawman = new RectangleDrawman (pnlMain);
         }
 
-        private void DrawShapes()
+        private void pnlMain_MouseDown(object sender, MouseEventArgs e)
         {
-            ShapeList mainList = new ShapeList();
-            mainList.DrawList(pnlMain);
+            IsActive = true;
+            FirstPoint.X = e.X;
+            FirstPoint.Y = e.Y;
         }
+
+        private void pnlMain_MouseUp(object sender, MouseEventArgs e)
+        {
+            SecondPoint.X = e.X;
+            SecondPoint.Y = e.Y;
+        }
+
+        private void pnlMain_MouseMove(object sender, MouseEventArgs e)
+        {
+            SecondPoint.X = e.X;
+            SecondPoint.Y = e.Y;
+            if (IsActive)
+            CurrentDrawman.Draw(FirstPoint, SecondPoint);
+        }
+
+       
+
 
 
 

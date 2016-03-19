@@ -28,26 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.btnDraw = new System.Windows.Forms.Button();
+            this.tsDraw = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonRectangle = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.tsDraw.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
             // 
-            this.pnlMain.Location = new System.Drawing.Point(3, 76);
+            this.pnlMain.Location = new System.Drawing.Point(3, 28);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(694, 496);
+            this.pnlMain.Size = new System.Drawing.Size(694, 544);
             this.pnlMain.TabIndex = 0;
+            this.pnlMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlMain_MouseDown);
+            this.pnlMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlMain_MouseMove);
+            this.pnlMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlMain_MouseUp);
             // 
-            // btnDraw
+            // tsDraw
             // 
-            this.btnDraw.Location = new System.Drawing.Point(258, 12);
-            this.btnDraw.Name = "btnDraw";
-            this.btnDraw.Size = new System.Drawing.Size(158, 53);
-            this.btnDraw.TabIndex = 1;
-            this.btnDraw.Text = "Отрисовка";
-            this.btnDraw.UseVisualStyleBackColor = true;
-            this.btnDraw.Click += new System.EventHandler(this.btnDraw_Click);
+            this.tsDraw.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonRectangle,
+            this.toolStripButton2});
+            this.tsDraw.Location = new System.Drawing.Point(0, 0);
+            this.tsDraw.Name = "tsDraw";
+            this.tsDraw.Size = new System.Drawing.Size(697, 25);
+            this.tsDraw.TabIndex = 2;
+            this.tsDraw.Text = "tsDraw";
+            // 
+            // toolStripButtonRectangle
+            // 
+            this.toolStripButtonRectangle.Image = global::Task2.Properties.Resources.drawrect;
+            this.toolStripButtonRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRectangle.Name = "toolStripButtonRectangle";
+            this.toolStripButtonRectangle.Size = new System.Drawing.Size(79, 22);
+            this.toolStripButtonRectangle.Text = "Rectangle";
+            this.toolStripButtonRectangle.Click += new System.EventHandler(this.toolStripButtonRectangle_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton2";
             // 
             // MainForm
             // 
@@ -55,18 +81,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(697, 573);
-            this.Controls.Add(this.btnDraw);
+            this.Controls.Add(this.tsDraw);
             this.Controls.Add(this.pnlMain);
             this.Name = "MainForm";
             this.Text = "Окно демонстрации";
+            this.tsDraw.ResumeLayout(false);
+            this.tsDraw.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.Button btnDraw;
+        private System.Windows.Forms.ToolStrip tsDraw;
+        private System.Windows.Forms.ToolStripButton toolStripButtonRectangle;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
 
     }
 }

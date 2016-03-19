@@ -13,6 +13,9 @@ namespace Task2
         protected Point CenterPoint;
         protected int Colour;
 
+        public Point _CenterPoint {get { return CenterPoint; } }
+        public int _Colour { get { return Colour; } }
+
         protected Shape(int firstCentralCoordinate, int secondCentralCoordinate, int colour)
         {
             this.CenterPoint.X = firstCentralCoordinate;
