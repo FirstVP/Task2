@@ -33,6 +33,9 @@
             this.toolStripButtonRectangle = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEllipse = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonLine = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCircle = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSquare = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonTriangle = new System.Windows.Forms.ToolStripButton();
             this.tsDraw.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +54,10 @@
             this.tsDraw.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonRectangle,
             this.toolStripButtonEllipse,
-            this.toolStripButtonLine});
+            this.toolStripButtonLine,
+            this.toolStripButtonCircle,
+            this.toolStripButtonSquare,
+            this.toolStripButtonTriangle});
             this.tsDraw.Location = new System.Drawing.Point(0, 0);
             this.tsDraw.Name = "tsDraw";
             this.tsDraw.Size = new System.Drawing.Size(697, 25);
@@ -85,6 +91,33 @@
             this.toolStripButtonLine.Text = "Line";
             this.toolStripButtonLine.Click += new System.EventHandler(this.toolStripButtonLine_Click);
             // 
+            // toolStripButtonCircle
+            // 
+            this.toolStripButtonCircle.Image = global::Task2.Properties.Resources.drawellip;
+            this.toolStripButtonCircle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCircle.Name = "toolStripButtonCircle";
+            this.toolStripButtonCircle.Size = new System.Drawing.Size(57, 22);
+            this.toolStripButtonCircle.Text = "Circle";
+            this.toolStripButtonCircle.Click += new System.EventHandler(this.toolStripButtonCircle_Click);
+            // 
+            // toolStripButtonSquare
+            // 
+            this.toolStripButtonSquare.Image = global::Task2.Properties.Resources.drawrect;
+            this.toolStripButtonSquare.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSquare.Name = "toolStripButtonSquare";
+            this.toolStripButtonSquare.Size = new System.Drawing.Size(63, 22);
+            this.toolStripButtonSquare.Text = "Square";
+            this.toolStripButtonSquare.Click += new System.EventHandler(this.toolStripButtonSquare_Click);
+            // 
+            // toolStripButtonTriangle
+            // 
+            this.toolStripButtonTriangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonTriangle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonTriangle.Name = "toolStripButtonTriangle";
+            this.toolStripButtonTriangle.Size = new System.Drawing.Size(54, 22);
+            this.toolStripButtonTriangle.Text = "Triangle";
+            this.toolStripButtonTriangle.Click += new System.EventHandler(this.toolStripButtonTriangle_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,6 +142,9 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonRectangle;
         private System.Windows.Forms.ToolStripButton toolStripButtonEllipse;
         private System.Windows.Forms.ToolStripButton toolStripButtonLine;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCircle;
+        private System.Windows.Forms.ToolStripButton toolStripButtonSquare;
+        private System.Windows.Forms.ToolStripButton toolStripButtonTriangle;
 
     }
 }

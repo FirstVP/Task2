@@ -21,7 +21,7 @@ namespace Task2
            this.Colour = 0x78FF0000;
         }
 
-        public abstract void Draw(Panel drawPanel);
+      
     }
 
 }

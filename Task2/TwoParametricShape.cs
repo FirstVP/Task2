@@ -22,7 +22,7 @@ namespace Task2
         }
 
 
-        public abstract override void Draw(Panel drawPanel);
+  
     }
 
     class Rectangle : TwoParametricShape
@@ -41,11 +41,7 @@ namespace Task2
             this.CenterPoint.Y = firstPoint.Y + secondaryParameter / 2;
 
         }
-        public override void Draw(Panel drawPanel)
-        {
-            Graphics mainGrapics = drawPanel.CreateGraphics();
-            mainGrapics.DrawRectangle(new Pen(Color.FromArgb(Colour)), CenterPoint.X - MainParameter / 2, CenterPoint.Y - SecondaryParameter / 2, MainParameter, SecondaryParameter);
-        }
+       
     }
     class Ellipse : TwoParametricShape
     {
@@ -61,10 +57,6 @@ namespace Task2
             this.CenterPoint.Y = firstPoint.Y + secondaryParameter / 2;
 
         }
-        public override void Draw(Panel drawPanel)
-        {
-            Graphics mainGrapics = drawPanel.CreateGraphics();
-            mainGrapics.DrawEllipse(new Pen(Color.FromArgb(Colour)), CenterPoint.X - MainParameter, CenterPoint.Y - SecondaryParameter, MainParameter * 2, SecondaryParameter * 2);
-        }
+      
     }
 }

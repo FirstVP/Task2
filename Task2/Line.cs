@@ -21,11 +21,7 @@ namespace Task2
             this.EndPoint = secondPoint;
         }
 
-        public override void Draw(Panel drawPanel)
-        {
-            Graphics mainGrapics = drawPanel.CreateGraphics();
-            mainGrapics.DrawLine(new Pen(Color.FromArgb(Colour)), CenterPoint.X, CenterPoint.Y, EndPoint.X, EndPoint.Y);
-        }
+    
 
     }
 }

@@ -26,26 +26,6 @@ namespace Task2
             InitializeComponent();
         }
 
-        private void toolStripButtonLine_Click(object sender, EventArgs e)
-        {
-            Factory current = new LineFactory(pnlMain);
-            CurrentDrawman = current.FactoryMethod();
-        }
-
-        private void toolStripButtonEllipse_Click(object sender, EventArgs e)
-        {
-            Factory current = new EllipseFactory(pnlMain);
-            CurrentDrawman = current.FactoryMethod();
-        }
-
-        private void toolStripButtonRectangle_Click(object sender, EventArgs e)
-        {
-            Factory current = new RectangleFactory(pnlMain);
-            CurrentDrawman = current.FactoryMethod();
-        }
-
-
-
         private void pnlMain_MouseDown(object sender, MouseEventArgs e)
         {
             IsActive = true;
@@ -82,7 +62,41 @@ namespace Task2
 
         }
 
-   
+        private void toolStripButtonCircle_Click(object sender, EventArgs e)
+        {
+            Factory current = new CircleFactory(pnlMain);
+            CurrentDrawman = current.FactoryMethod();
+        }
+
+        private void toolStripButtonLine_Click(object sender, EventArgs e)
+        {
+            Factory current = new LineFactory(pnlMain);
+            CurrentDrawman = current.FactoryMethod();
+        }
+
+        private void toolStripButtonEllipse_Click(object sender, EventArgs e)
+        {
+            Factory current = new EllipseFactory(pnlMain);
+            CurrentDrawman = current.FactoryMethod();
+        }
+
+        private void toolStripButtonRectangle_Click(object sender, EventArgs e)
+        {
+            Factory current = new RectangleFactory(pnlMain);
+            CurrentDrawman = current.FactoryMethod();
+        }
+
+        private void toolStripButtonSquare_Click(object sender, EventArgs e)
+        {
+            Factory current = new SquareFactory(pnlMain);
+            CurrentDrawman = current.FactoryMethod();
+        }
+
+        private void toolStripButtonTriangle_Click(object sender, EventArgs e)
+        {
+            Factory current = new TriangleFactory(pnlMain);
+            CurrentDrawman = current.FactoryMethod();
+        }
 
        
 
