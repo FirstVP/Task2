@@ -10,28 +10,18 @@ namespace Task2
 {
     class RectangleDrawman : Drawman
     {
-        Rectangle Rectangle;
+        
 
         public RectangleDrawman(Panel drawPanel): base (drawPanel)
         {
            
         }
 
-        protected override void CreateObject(Point firstPoint, Point secondPoint)
-        {
-            int mainParameter = secondPoint.X - firstPoint.X;
-            int secondParameter = secondPoint.Y - firstPoint.Y;
-            int firstCentralCoordinate = firstPoint.X + mainParameter / 2;
-            int secondCentralCoordinate = firstPoint.Y + secondParameter / 2;
-
-            this.Rectangle = new Rectangle(firstCentralCoordinate, secondCentralCoordinate, mainParameter, secondParameter, 0x78FF0000);
-        }
-
         public override void Draw(Point firstPoint, Point secondPoint)
         {
-            CreateObject (firstPoint, secondPoint);
+            Rectangle rectangle = new Rectangle (firstPoint,  secondPoint);
             Graphics mainGrapics = drawPanel.CreateGraphics();
-            mainGrapics.DrawRectangle(new Pen(Color.FromArgb(Rectangle._Colour)), Rectangle._CenterPoint.X - Rectangle._MainParameter / 2, Rectangle._CenterPoint.Y - Rectangle._SecondaryParameter / 2, Rectangle._MainParameter, Rectangle._SecondaryParameter);
+            mainGrapics.DrawRectangle(new Pen(Color.FromArgb(rectangle._Colour)), rectangle._CenterPoint.X - rectangle._MainParameter / 2, rectangle._CenterPoint.Y - rectangle._SecondaryParameter / 2, rectangle._MainParameter, rectangle._SecondaryParameter);
         }
     }
 }

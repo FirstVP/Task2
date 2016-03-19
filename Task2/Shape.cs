@@ -16,11 +16,9 @@ namespace Task2
         public Point _CenterPoint {get { return CenterPoint; } }
         public int _Colour { get { return Colour; } }
 
-        protected Shape(int firstCentralCoordinate, int secondCentralCoordinate, int colour)
+        protected Shape(Point firstPoint, Point secondPoint)
         {
-            this.CenterPoint.X = firstCentralCoordinate;
-            this.CenterPoint.Y = secondCentralCoordinate;
-            this.Colour = colour;
+           this.Colour = 0x78FF0000;
         }
 
         public abstract void Draw(Panel drawPanel);

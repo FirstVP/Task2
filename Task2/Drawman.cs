@@ -12,13 +12,11 @@ namespace Task2
     {
         protected Panel drawPanel=null;
 
-
         protected Drawman(Panel drawPanel)
         {
             this.drawPanel = drawPanel;
         }
 
-        protected abstract void CreateObject(Point firstPoint, Point secondPoint);
         public abstract void Draw(Point firstPoint, Point secondPoint);
 
 

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlMain = new System.Windows.Forms.Panel();
             this.tsDraw = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonRectangle = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonEllipse = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonLine = new System.Windows.Forms.ToolStripButton();
             this.tsDraw.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,8 @@
             // 
             this.tsDraw.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonRectangle,
-            this.toolStripButton2});
+            this.toolStripButtonEllipse,
+            this.toolStripButtonLine});
             this.tsDraw.Location = new System.Drawing.Point(0, 0);
             this.tsDraw.Name = "tsDraw";
             this.tsDraw.Size = new System.Drawing.Size(697, 25);
@@ -66,14 +67,23 @@
             this.toolStripButtonRectangle.Text = "Rectangle";
             this.toolStripButtonRectangle.Click += new System.EventHandler(this.toolStripButtonRectangle_Click);
             // 
-            // toolStripButton2
+            // toolStripButtonEllipse
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButtonEllipse.Image = global::Task2.Properties.Resources.drawellip;
+            this.toolStripButtonEllipse.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonEllipse.Name = "toolStripButtonEllipse";
+            this.toolStripButtonEllipse.Size = new System.Drawing.Size(60, 22);
+            this.toolStripButtonEllipse.Text = "Ellipse";
+            this.toolStripButtonEllipse.Click += new System.EventHandler(this.toolStripButtonEllipse_Click);
+            // 
+            // toolStripButtonLine
+            // 
+            this.toolStripButtonLine.Image = global::Task2.Properties.Resources.line;
+            this.toolStripButtonLine.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonLine.Name = "toolStripButtonLine";
+            this.toolStripButtonLine.Size = new System.Drawing.Size(49, 22);
+            this.toolStripButtonLine.Text = "Line";
+            this.toolStripButtonLine.Click += new System.EventHandler(this.toolStripButtonLine_Click);
             // 
             // MainForm
             // 
@@ -97,7 +107,8 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.ToolStrip tsDraw;
         private System.Windows.Forms.ToolStripButton toolStripButtonRectangle;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButtonEllipse;
+        private System.Windows.Forms.ToolStripButton toolStripButtonLine;
 
     }
 }

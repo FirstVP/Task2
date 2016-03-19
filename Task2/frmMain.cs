@@ -26,10 +26,25 @@ namespace Task2
             InitializeComponent();
         }
 
+        private void toolStripButtonLine_Click(object sender, EventArgs e)
+        {
+            Factory current = new LineFactory(pnlMain);
+            CurrentDrawman = current.FactoryMethod();
+        }
+
+        private void toolStripButtonEllipse_Click(object sender, EventArgs e)
+        {
+            Factory current = new EllipseFactory(pnlMain);
+            CurrentDrawman = current.FactoryMethod();
+        }
+
         private void toolStripButtonRectangle_Click(object sender, EventArgs e)
         {
-            CurrentDrawman = new RectangleDrawman (pnlMain);
+            Factory current = new RectangleFactory(pnlMain);
+            CurrentDrawman = current.FactoryMethod();
         }
+
+
 
         private void pnlMain_MouseDown(object sender, MouseEventArgs e)
         {
@@ -40,19 +55,40 @@ namespace Task2
 
         private void pnlMain_MouseUp(object sender, MouseEventArgs e)
         {
+            
             SecondPoint.X = e.X;
             SecondPoint.Y = e.Y;
+
+            if (IsActive)
+                try
+                {
+                  CurrentDrawman.Draw(FirstPoint, SecondPoint);
+                }
+                catch
+                {
+                    MessageBox.Show("Не выбрана фигура!");
+                    
+                }
+                finally
+                {
+                   IsActive = false;
+                }
+           
         }
 
         private void pnlMain_MouseMove(object sender, MouseEventArgs e)
         {
-            SecondPoint.X = e.X;
-            SecondPoint.Y = e.Y;
-            if (IsActive)
-            CurrentDrawman.Draw(FirstPoint, SecondPoint);
+
+
         }
 
+   
+
        
+
+
+
+
 
 
 

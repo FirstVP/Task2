@@ -14,10 +14,10 @@ namespace Task2
 
         public int _MainParameter { get { return MainParameter; } }
 
-        protected OneParametricShape(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter, int colour)
-            : base(firstCentralCoordinate, secondCentralCoordinate, colour)
+        protected OneParametricShape(Point firstPoint, Point secondPoint)
+            : base(firstPoint, secondPoint)
         {
-            this.MainParameter = mainParameter;
+            
         }
 
         public abstract override void Draw(Panel drawPanel);
@@ -26,8 +26,8 @@ namespace Task2
 
     class Square : OneParametricShape
     {
-        public Square(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter, int colour)
-            : base(firstCentralCoordinate, secondCentralCoordinate, mainParameter, colour)
+        public Square(Point firstPoint, Point secondPoint)
+            : base(firstPoint, secondPoint)
         {
 
         }
@@ -42,8 +42,8 @@ namespace Task2
 
     class Circle : OneParametricShape
     {
-        public Circle(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter, int colour)
-            : base(firstCentralCoordinate, secondCentralCoordinate, mainParameter, colour)
+        public Circle(Point firstPoint, Point secondPoint)
+            : base(firstPoint, secondPoint)
         {
 
         }
@@ -56,8 +56,9 @@ namespace Task2
 
     class EquilateralTriangle : OneParametricShape
     {
-        public EquilateralTriangle(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter, int colour)
-            : base(firstCentralCoordinate, secondCentralCoordinate, mainParameter, colour)
+
+        public EquilateralTriangle(Point firstPoint, Point secondPoint)
+            : base(firstPoint, secondPoint)
         {
 
         }

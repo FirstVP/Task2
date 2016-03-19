@@ -12,11 +12,13 @@ namespace Task2
     {
         Point EndPoint;
 
-        public Line(int firstCentralCoordinate, int secondCentralCoordinate, int firstEndCoordinate, int secondEndCoordinate, int color)
-            : base(firstCentralCoordinate, secondCentralCoordinate, color)
+        public Point _EndPoint { get { return EndPoint; } }
+
+        public Line(Point firstPoint, Point secondPoint)
+            : base(firstPoint, secondPoint)
         {
-            this.EndPoint.X = firstEndCoordinate;
-            this.EndPoint.Y = secondEndCoordinate;
+            this.CenterPoint = firstPoint;
+            this.EndPoint = secondPoint;
         }
 
         public override void Draw(Panel drawPanel)

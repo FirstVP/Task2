@@ -15,20 +15,30 @@ namespace Task2
 
         public int _SecondaryParameter { get { return SecondaryParameter; } }
 
-        protected TwoParametricShape(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter, int secondaryParameter, int colour)
-            : base(firstCentralCoordinate, secondCentralCoordinate, mainParameter, colour)
+        protected TwoParametricShape(Point firstPoint, Point secondPoint)
+            : base(firstPoint, secondPoint)
         {
-            this.SecondaryParameter = secondaryParameter;
+
         }
+
 
         public abstract override void Draw(Panel drawPanel);
     }
 
     class Rectangle : TwoParametricShape
     {
-        public Rectangle(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter, int secondaryParameter, int colour)
-            : base(firstCentralCoordinate, secondCentralCoordinate, mainParameter, secondaryParameter, colour)
+
+
+        public Rectangle(Point firstPoint, Point secondPoint)
+            : base(firstPoint, secondPoint)
         {
+            int mainParameter = secondPoint.X - firstPoint.X;
+            int secondaryParameter = secondPoint.Y - firstPoint.Y;
+
+            this.MainParameter = mainParameter;
+            this.SecondaryParameter = secondaryParameter;
+            this.CenterPoint.X = firstPoint.X + mainParameter / 2;
+            this.CenterPoint.Y = firstPoint.Y + secondaryParameter / 2;
 
         }
         public override void Draw(Panel drawPanel)
@@ -39,9 +49,16 @@ namespace Task2
     }
     class Ellipse : TwoParametricShape
     {
-        public Ellipse(int firstCentralCoordinate, int secondCentralCoordinate, int mainParameter, int secondaryParameter, int colour)
-            : base(firstCentralCoordinate, secondCentralCoordinate, mainParameter, secondaryParameter, colour)
+        public Ellipse(Point firstPoint, Point secondPoint)
+            : base(firstPoint, secondPoint)
         {
+            int mainParameter = secondPoint.X - firstPoint.X;
+            int secondaryParameter = secondPoint.Y - firstPoint.Y;
+
+            this.MainParameter = mainParameter;
+            this.SecondaryParameter = secondaryParameter;
+            this.CenterPoint.X = firstPoint.X + mainParameter / 2;
+            this.CenterPoint.Y = firstPoint.Y + secondaryParameter / 2;
 
         }
         public override void Draw(Panel drawPanel)
